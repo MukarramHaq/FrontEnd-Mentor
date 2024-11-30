@@ -45,15 +45,17 @@
     <header class="p-6">
       <nav class="flex justify-between">
         <div class="flex gap-4 items-center">
-          <img class="h-4 align-top" src="./images/icon-menu.svg" alt="Menu" />
+          <button id="menu-btn"><img class="h-4 align-top" src="./images/icon-menu.svg" alt="Menu" /></button>
            <img class="mb-[5px]" src="images/logo.svg" alt="">
         </div>
         <div class="flex gap-6">
-          <img
-            class="h-6 self-center"
-            src="./images/icon-cart.svg"
-            alt="Cart"
-          />
+          <button id="cart-btn">
+            <img
+              class="h-6 self-center"
+              src="./images/icon-cart.svg"
+              alt="Cart"
+            />
+          </button>
           <img
             class="h-7 self-center"
             src="./images/image-avatar.png"
@@ -61,9 +63,32 @@
           />
         </div>
       </nav>
+
+      <nav id="sidebar" class="flex-col gap-14 fixed top-0 left-0 h-svh w-3/4 bg-white p-6 z-999 hidden">
+        <button id="close-btn"><img src="images/icon-close.svg" alt=""></button>
+        <ul class="flex flex-col gap-4 font-bold">
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+
     </header>
 
-    <main>
+    <main class="relative">
+
+      <!-- Cart -->
+      <div id="cart-container" class="absolute m-auto w-[350px] h-[300px] bg-white rounded-lg z-999 top-4 left-3 shadow-lg hidden">
+        <div class="pl-[24px] pt-[24px] pb-[31px] border-b-[1px] border-b-[#979797]">
+          <p class="font-bold">Cart</p>
+        </div>
+        <div class="flex justify-center items-center min-h-56">
+          <p class="font-bold text-[#69707D]">Your cart is empty.</p>
+        </div>
+      </div>
+
       <!-- Image slider. Need some help with this and if there is a better way to go about it? -->
 
       <div class="slider relative w-full max-w-4xl m-auto overflow-hidden">
@@ -118,17 +143,17 @@
         </div>
 
         <!-- - 0 + -->
-         <div class="flex justify-between pl-[24px] pr-[24px] pt-[26px] pb-[26px] rounded-lg bg-[#FFFFFF]">
-          <img class="self-center" src="./images/icon-minus.svg" alt="">
-          <span class="text-[#1D2026] font-semibold">0</span>
-          <img class="self-center" src="./images/icon-plus.svg" alt="">
+         <div class="flex justify-between pl-[24px] pr-[24px] pt-[26px] pb-[26px] rounded-lg bg-[#F6F8FD] mb-5">
+          <button id="minus-btn" class="self-center"><img src="./images/icon-minus.svg" alt=""></button>
+          <span id="quantity" class="text-[#1D2026] font-semibold">0</span>
+          <button id="plus-btn"><img class="self-center" src="./images/icon-plus.svg" alt=""></button>
          </div>
 
-         <!-- Add to Card Button -->
+         <!-- Add to Cart Button -->
          <button class="w-full bg-[#FF7E1B] flex justify-center items-center rounded-md pt-[19px] pb-[19px] gap-4">
           <!-- How do I change the color of the cart? -->
-          <img class="h-4" src="./images/icon-cart.svg" alt="">
-          <span class="font-bold text-[#1D2026]">Add to cart</span>
+          <img class="h-4 self-center" src="./images/icon-cart.svg" alt="">
+          <span class="font-bold text-[#1D2026] self-center">Add to cart</span>
          </button>
       </section>
 

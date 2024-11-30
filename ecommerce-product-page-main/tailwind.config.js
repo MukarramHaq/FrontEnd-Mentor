@@ -13,7 +13,7 @@ module.exports = {
       backgroundImage: {
         'left-pointer': "url('./images/icon-previous.svg')",
         'right-pointer': "url('./images/icon-next.svg')",
-      }
+      },
     },
   },
   plugins: [],
