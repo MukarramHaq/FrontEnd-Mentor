@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="output.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
-</head>
-<body class="font-header">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Collections
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body class="font-header">
+    <!-- Collections
   Men
   Women
   About
@@ -34,40 +42,80 @@
   0
   Add to cart -->
 
-  <header class="p-6">
-    <nav class="flex justify-between">
-      <div class="flex gap-4 items-center">
-        <img class="h-4 align-top" src="./images/icon-menu.svg" alt="Menu">
-        <h1 class="text-3xl font-bold mb-[6px]">sneakers</h1>
-      </div>
-      <div class="flex gap-6">
-        <img class="h-6 self-center" src="./images/icon-cart.svg" alt="Cart">
-        <img class="h-7 self-center" src="./images/image-avatar.png" alt="Avatar of the user">
-      </div>
-    </nav>
-  </header>
+    <header class="p-6">
+      <nav class="flex justify-between">
+        <div class="flex gap-4 items-center">
+          <img class="h-4 align-top" src="./images/icon-menu.svg" alt="Menu" />
+          <h1 class="text-3xl font-bold mb-[6px]">sneakers</h1>
+        </div>
+        <div class="flex gap-6">
+          <img
+            class="h-6 self-center"
+            src="./images/icon-cart.svg"
+            alt="Cart"
+          />
+          <img
+            class="h-7 self-center"
+            src="./images/image-avatar.png"
+            alt="Avatar of the user"
+          />
+        </div>
+      </nav>
+    </header>
 
-  <main>
+    <main>
+      <!-- Image slider. Need some help with this and if there is a better way to go about it? -->
 
-    <!-- Image slider. Need some help with this and if there is a better way to go about it? -->
-    <div>
-      <div class="relative overflow-hidden h-[300px]">
+      <div class="slider relative w-full max-w-4xl m-auto overflow-hidden">
+        <!-- Slider container -->
+        <div id="slides" class="flex transition-transform duration-500">
+          <img
+            class="slide w-full"
+            src="./images/image-product-1.jpg"
+            alt="Product 1"
+          />
+          <img
+            class="slide w-full"
+            src="./images/image-product-2.jpg"
+            alt="Product 2"
+          />
+          <img
+            class="slide w-full"
+            src="./images/image-product-3.jpg"
+            alt="Product 3"
+          />
+          <img
+            class="slide w-full"
+            src="./images/image-product-4.jpg"
+            alt="Product 4"
+          />
+        </div>
+
+        <!-- Navigation buttons -->
+        <button
+          onclick="prevSlide()"
+          class="absolute top-1/2 left-2 transform -translate-y-1/2 w-10 h-10 bg-gray-100 bg-left-pointer bg-no-repeat bg-center border rounded-full flex items-center justify-center"
+        ></button>
+        <button
+          onclick="nextSlide()"
+          class="absolute top-1/2 right-2 transform -translate-y-1/2 w-10 h-10 bg-gray-100 bg-right-pointer bg-no-repeat bg-center border rounded-full flex items-center justify-center"
+        ></button>
+      </div>
+
+      <!-- <div>
+      <div class="h-[340px] overflow-hidden relative">
         <img class="slider absolute" src="./images/image-product-1.jpg" alt="">
         <img class="slider absolute" src="./images/image-product-2.jpg" alt="">
         <img class="slider absolute" src="./images/image-product-3.jpg" alt="">
         <img class="slider absolute" src="./images/image-product-4.jpg" alt="">
       </div>
-      <div class="flex justify-between pl-6 pr-6 fixed top-60 z-999 w-full">
+      <div class="flex justify-between pl-6 pr-6 fixed top-60 z-0 w-full">
         <a class="h-7 w-7 border p-5 rounded-full bg-white bg-left-pointer bg-no-repeat bg-center"></a>
         <a class="h-7 w-7 border p-5 rounded-full bg-white bg-right-pointer bg-no-repeat bg-center"></a>
       </div>
-    </div>
+    </div> -->
+    </main>
 
-
-
-  </main>
-  
-  <script src="index.js"></script>
-
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
