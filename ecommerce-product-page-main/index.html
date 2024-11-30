@@ -34,5 +34,40 @@
   0
   Add to cart -->
 
+  <header class="p-6">
+    <nav class="flex justify-between">
+      <div class="flex gap-4 items-center">
+        <img class="h-4 align-top" src="./images/icon-menu.svg" alt="Menu">
+        <h1 class="text-3xl font-bold mb-[6px]">sneakers</h1>
+      </div>
+      <div class="flex gap-6">
+        <img class="h-6 self-center" src="./images/icon-cart.svg" alt="Cart">
+        <img class="h-7 self-center" src="./images/image-avatar.png" alt="Avatar of the user">
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Image slider. Need some help with this and if there is a better way to go about it? -->
+    <div>
+      <div class="relative overflow-hidden h-[300px]">
+        <img class="slider absolute" src="./images/image-product-1.jpg" alt="">
+        <img class="slider absolute" src="./images/image-product-2.jpg" alt="">
+        <img class="slider absolute" src="./images/image-product-3.jpg" alt="">
+        <img class="slider absolute" src="./images/image-product-4.jpg" alt="">
+      </div>
+      <div class="flex justify-between pl-6 pr-6 fixed top-60 z-999 w-full">
+        <a class="h-7 w-7 border p-5 rounded-full bg-white bg-left-pointer bg-no-repeat bg-center"></a>
+        <a class="h-7 w-7 border p-5 rounded-full bg-white bg-right-pointer bg-no-repeat bg-center"></a>
+      </div>
+    </div>
+
+
+
+  </main>
+  
+  <script src="index.js"></script>
+
 </body>
 </html>

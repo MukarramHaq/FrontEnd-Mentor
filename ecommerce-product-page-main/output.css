@@ -556,28 +556,188 @@ video {
   display: none;
 }
 
+.fixed{
+  position: fixed;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
+.top-60{
+  top: 15rem;
+}
+
+.z-999{
+  z-index: 999;
+}
+
+.mb-\[6px\]{
+  margin-bottom: 6px;
+}
+
 .flex{
   display: flex;
 }
 
-.font-body{
-  font-family: Overpass;
+.h-4{
+  height: 1rem;
+}
+
+.h-6{
+  height: 1.5rem;
+}
+
+.h-7{
+  height: 1.75rem;
+}
+
+.h-1{
+  height: 0.25rem;
+}
+
+.h-10{
+  height: 2.5rem;
+}
+
+.h-\[300px\]{
+  height: 300px;
+}
+
+.h-full{
+  height: 100%;
+}
+
+.w-7{
+  width: 1.75rem;
+}
+
+.w-full{
+  width: 100%;
+}
+
+.w-\[375px\]{
+  width: 375px;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.gap-4{
+  gap: 1rem;
+}
+
+.gap-6{
+  gap: 1.5rem;
+}
+
+.self-center{
+  align-self: center;
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.rounded-full{
+  border-radius: 9999px;
+}
+
+.border{
+  border-width: 1px;
+}
+
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-left-pointer{
+  background-image: url('./images/icon-previous.svg');
+}
+
+.bg-right-pointer{
+  background-image: url('./images/icon-next.svg');
+}
+
+.bg-center{
+  background-position: center;
+}
+
+.bg-no-repeat{
+  background-repeat: no-repeat;
+}
+
+.p-5{
+  padding: 1.25rem;
+}
+
+.p-6{
+  padding: 1.5rem;
+}
+
+.p-4{
+  padding: 1rem;
+}
+
+.pl-6{
+  padding-left: 1.5rem;
+}
+
+.pr-6{
+  padding-right: 1.5rem;
+}
+
+.pl-5{
+  padding-left: 1.25rem;
+}
+
+.pr-5{
+  padding-right: 1.25rem;
+}
+
+.pl-4{
+  padding-left: 1rem;
+}
+
+.pr-4{
+  padding-right: 1rem;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.align-top{
+  vertical-align: top;
 }
 
 .font-header{
   font-family: "Kumbh Sans";
 }
 
-.text-5xl{
-  font-size: 3rem;
-  line-height: 1;
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem;
+.font-bold{
+  font-weight: 700;
 }
 
-.font-extrabold{
-  font-weight: 800;
+.round{
+  border-radius: 50%;
 }
