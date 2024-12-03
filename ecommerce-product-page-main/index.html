@@ -91,7 +91,7 @@
       <!-- Cart -->
         <!-- Do I really need h-[300px] for the cart container since I have the min-h-56 -->
       <div
-        id="cart-container-empty"
+        id="cart-container"
         class="hidden absolute m-auto w-[350px] bg-white rounded-lg z-999 top-4 left-3 shadow-lg md:top-0 md:left-0 md:right-0" 
       >
         <div
@@ -99,15 +99,28 @@
         >
           <p class="font-bold">Cart</p>
         </div>
-        <div class="flex justify-center items-center min-h-56 gap-4 p-4">
-          <p class="font-bold text-[#69707D]">Your cart is empty.</p>
+        <div id="cart-container-empty" class="block">
+          <div class="flex justify-center items-center min-h-56 gap-4 p-4">
+            <p class="font-bold text-[#69707D]">Your cart is empty.</p>
+          </div>
+        </div>
+        <div id="cart-container-full" class="p-4 hidden">
+          <div class="flex gap-4">
+            <img class="h-12 w-12 rounded" src="./images/image-product-1-thumbnail.jpg" alt="">
+            <div>
+              <p class="text-[#979797] font-light">Fall Limited Edition Sneakers</p>
+              <p class="text-[#979797] font-light">$125.00 x <span id="items-in-cart">1</span> <span id="total" class="font-bold text-black">$</span></p>
+            </div>
+            <img id="delete-item" class="self-center" src="./images/icon-delete.svg" alt="">
+          </div>
+          <button class="w-full font-bold bg-[#FF7E1B] mt-8 h-14 rounded-lg">Checkout</button>
         </div>
         
       </div>
 
       <!-- Cart with items -->
 
-      <div
+      <!-- <div
         id="cart-container-full"
         class="absolute w-[350px] bg-white rounded-lg z-999 top-4 left-3 shadow-lg hidden" 
       >
@@ -126,7 +139,7 @@
           <button class="w-full font-bold bg-[#FF7E1B] mt-8 h-14 rounded-lg">Checkout</button>
         </div>
         
-      </div>
+      </div> -->
 
       <!-- Image slider. Need some help with this and if there is a better way to go about it? -->
 

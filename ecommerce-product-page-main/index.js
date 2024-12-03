@@ -5,8 +5,11 @@ const minusBtnEl = document.getElementById("minus-btn");
 const plusBtnEl = document.getElementById("plus-btn");
 const quantityEl = document.getElementById("quantity");
 const cartBtnEl = document.getElementById("cart-btn");
+const cartContainerEl = document.getElementById("cart-container");
 const cartContainerEmptyEl = document.getElementById("cart-container-empty");
 const cartContainerFullEl = document.getElementById("cart-container-full");
+console.log(cartContainerEmptyEl)
+console.log(cartContainerFullEl)
 const addToCartEl = document.getElementById('add-to-cart');
 const itemsInCartEl = document.getElementById('items-in-cart');
 const totalBillEl = document.getElementById('total');
@@ -75,7 +78,7 @@ minusBtnEl.addEventListener("click", () => {
 /********** Show Cart Functionality **********/
 cartBtnEl.addEventListener('click', () => {
 
-  emptyCartVisibility();
+  cartVisibility();
 
 })
 
@@ -83,16 +86,32 @@ addToCartEl.addEventListener('click', () => {
   
   if(productQuantity > 0){
     cartContainerEmptyEl.style.display = "none";
+    cartContainerFullEl.style.display = "block"
+    itemsInCartEl.textContent = productQuantity;
+    console.log(itemsInCartEl.textContent);
+    totalBillEl.textContent = "$" + productQuantity * + 125 + ".00"
   }
 
 })
 
+/********** Delete Items Functionality **********/
+
+deleteItemEl.addEventListener('click', () => {
+
+  productQuantity = 0;
+  itemsInCartEl.textContent = 0;
+  totalBillEl.textContent = "";
+  cartContainerFullEl.style.display = "none";
+  cartContainerEmptyEl.style.display = "block";
+
+})
+
 /********** Function for the cart functionality **********/
-function emptyCartVisibility(){
-  if(cartContainerEmptyEl.style.display === "none"){
-    cartContainerEmptyEl.style.display = "block"
+function cartVisibility(){
+  if(cartContainerEl.style.display === "none"){
+    cartContainerEl.style.display = "block"
   }else{
-    cartContainerEmptyEl.style.display = "none";
+    cartContainerEl.style.display = "none";
   }
 
 }
