@@ -1,0 +1,36 @@
+/********** Cart Display Functionality(This one works) **********/
+
+let isAddedToCart = false; // Track if the "Add to Cart" button has been clicked
+
+cartBtnEl.addEventListener("click", () => {
+  if (!isAddedToCart || productQuantity === 0) {
+    // Toggle the empty cart
+    if (cartContainerEmptyEl.style.display === "block") {
+      cartContainerEmptyEl.style.display = "none";
+    } else {
+      cartContainerEmptyEl.style.display = "block";
+      cartContainerFullEl.style.display = "none"; // Ensure the full cart is hidden
+    }
+  } else {
+    // Toggle the full cart
+    if (cartContainerFullEl.style.display === "block") {
+      cartContainerFullEl.style.display = "none";
+    } else {
+      cartContainerFullEl.style.display = "block";
+      cartContainerEmptyEl.style.display = "none"; // Ensure the empty cart is hidden
+    }
+  }
+});
+
+
+/********** Add To Cart Display Functionality(This works) **********/
+
+addToCartEl.addEventListener("click", () => {
+  if (productQuantity > 0) {
+    isAddedToCart = true; // Mark the cart as updated
+    itemsInCartEl.textContent = productQuantity;
+    totalBillEl.textContent = "$" + productQuantity * 125 + ".00";
+  } else {
+    isAddedToCart = false; // Reset if quantity is 0
+  }
+});
