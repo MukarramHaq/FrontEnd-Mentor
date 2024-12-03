@@ -42,11 +42,17 @@
   0
   Add to cart -->
 
-    <header class="p-6">
+    <header class="p-6 max-w-[1110px] m-auto">
       <nav class="flex justify-between">
         <div class="flex gap-4 items-center">
-          <button id="menu-btn"><img class="h-4 align-top" src="./images/icon-menu.svg" alt="Menu" /></button>
-           <img class="mb-[5px]" src="images/logo.svg" alt="">
+          <button id="menu-btn">
+            <img
+              class="h-4 align-top"
+              src="./images/icon-menu.svg"
+              alt="Menu"
+            />
+          </button>
+          <img class="mb-[5px]" src="images/logo.svg" alt="" />
         </div>
         <div class="flex gap-6">
           <button id="cart-btn">
@@ -64,8 +70,13 @@
         </div>
       </nav>
 
-      <nav id="sidebar" class="flex-col gap-14 fixed top-0 left-0 h-svh w-3/4 bg-white p-6 z-999 hidden">
-        <button id="close-btn"><img src="images/icon-close.svg" alt=""></button>
+      <nav
+        id="sidebar"
+        class="flex-col gap-14 fixed top-0 left-0 h-svh w-3/4 bg-white p-6 z-999 hidden"
+      >
+        <button id="close-btn">
+          <img src="images/icon-close.svg" alt="" />
+        </button>
         <ul class="flex flex-col gap-4 font-bold">
           <li>Collections</li>
           <li>Men</li>
@@ -74,19 +85,47 @@
           <li>Contact</li>
         </ul>
       </nav>
-
     </header>
 
     <main class="relative">
-
       <!-- Cart -->
-      <div id="cart-container" class="absolute m-auto w-[350px] h-[300px] bg-white rounded-lg z-999 top-4 left-3 shadow-lg hidden">
-        <div class="pl-[24px] pt-[24px] pb-[31px] border-b-[1px] border-b-[#979797]">
+        <!-- Do I really need h-[300px] for the cart container since I have the min-h-56 -->
+      <div
+        id="cart-container-empty"
+        class="hidden absolute m-auto w-[350px] bg-white rounded-lg z-999 top-4 left-3 shadow-lg md:top-0 md:left-0 md:right-0" 
+      >
+        <div
+          class="pl-[24px] pt-[24px] pb-[31px] border-b-[1px] border-b-[#979797]"
+        >
           <p class="font-bold">Cart</p>
         </div>
-        <div class="flex justify-center items-center min-h-56">
+        <div class="flex justify-center items-center min-h-56 gap-4 p-4">
           <p class="font-bold text-[#69707D]">Your cart is empty.</p>
         </div>
+        
+      </div>
+
+      <!-- Cart with items -->
+
+      <div
+        id="cart-container-full"
+        class="absolute w-[350px] bg-white rounded-lg z-999 top-4 left-3 shadow-lg hidden" 
+      >
+        <div class="mb-5">
+          <p class="p-6 font-bold border-b-[1px] border-b-[#979797]">Cart</p>
+        </div>
+        <div class="p-4">
+          <div class="flex gap-4">
+            <img class="h-12 w-12 rounded" src="./images/image-product-1-thumbnail.jpg" alt="">
+            <div>
+              <p class="text-[#979797] font-light">Fall Limited Edition Sneakers</p>
+              <p class="text-[#979797] font-light">$125.00 x <span id="items-in-cart">1</span> <span id="total" class="font-bold text-black"></span></p>
+            </div>
+            <img id="delete-item" class="self-center" src="./images/icon-delete.svg" alt="">
+          </div>
+          <button class="w-full font-bold bg-[#FF7E1B] mt-8 h-14 rounded-lg">Checkout</button>
+        </div>
+        
       </div>
 
       <!-- Image slider. Need some help with this and if there is a better way to go about it? -->
@@ -128,35 +167,62 @@
       </div>
 
       <section class="p-6">
-        <p class="text-[11px] tracking-[0.2rem] font-bold text-[#69707D] mb-5">SNEAKER COMPANY</p>
+        <p class="text-[11px] tracking-[0.2rem] font-bold text-[#69707D] mb-5">
+          SNEAKER COMPANY
+        </p>
         <h2 class="text-3xl font-bold mb-5">Fall Limited Edition Sneakers</h2>
-        <p class="text-[#69707D] text-[15px] font-light leading-6 mb-5">These low-profile sneakers are your perfect casual wear companion. Featuring a 
-          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-        
+        <p class="text-[#69707D] text-[15px] font-light leading-6 mb-5">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+
         <!-- Pricing -->
         <div class="flex justify-between mb-5">
           <div class="flex gap-4">
             <p class="text-[#1D2026] text-[28px] font-bold">$125.00</p>
-            <span class="pl-[10px] pr-[10px] pt-[6px] pb-[6px] flex-grow-0 bg-black text-white font-semibold self-center rounded-md">50%</span>
+            <span
+              class="pl-[10px] pr-[10px] pt-[6px] pb-[6px] flex-grow-0 bg-black text-white font-semibold self-center rounded-md"
+              >50%</span
+            >
           </div>
-          <p class="text-[#69707D] font-semibold self-center text-[16px] line-through">$250.00</p>
+          <p
+            class="text-[#69707D] font-semibold self-center text-[16px] line-through"
+          >
+            $250.00
+          </p>
         </div>
 
         <!-- - 0 + -->
-         <div class="flex justify-between pl-[24px] pr-[24px] pt-[26px] pb-[26px] rounded-lg bg-[#F6F8FD] mb-5">
-          <button id="minus-btn" class="self-center"><img src="./images/icon-minus.svg" alt=""></button>
+        <div
+          class="flex justify-between pl-[24px] pr-[24px] pt-[26px] pb-[26px] rounded-lg bg-[#F6F8FD] mb-5"
+        >
+          <button id="minus-btn" class="self-center">
+            <img src="./images/icon-minus.svg" alt="" />
+          </button>
           <span id="quantity" class="text-[#1D2026] font-semibold">0</span>
-          <button id="plus-btn"><img class="self-center" src="./images/icon-plus.svg" alt=""></button>
-         </div>
+          <button id="plus-btn">
+            <img class="self-center" src="./images/icon-plus.svg" alt="" />
+          </button>
+        </div>
 
-         <!-- Add to Cart Button -->
-         <button class="w-full bg-[#FF7E1B] flex justify-center items-center rounded-md pt-[19px] pb-[19px] gap-4">
+        <!-- Add to Cart Button -->
+        <button
+          id="add-to-cart"
+          class="w-full bg-[#FF7E1B] flex justify-center items-center rounded-md pt-[19px] pb-[19px] gap-4"
+        >
           <!-- How do I change the color of the cart? -->
-          <img class="h-4 self-center" src="./images/icon-cart.svg" alt="">
+          <!-- <img class="h-4 self-center" src="./images/icon-cart.svg" alt=""> -->
+          <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+              fill="#1D2026"
+              fill-rule="nonzero"
+            />
+          </svg>
           <span class="font-bold text-[#1D2026] self-center">Add to cart</span>
-         </button>
+        </button>
       </section>
-
     </main>
 
     <script src="index.js"></script>
