@@ -55,9 +55,7 @@
           <a href=""><img class="mb-[5px]" src="images/logo.svg" alt="" /></a>
           <ul class="hidden md:flex md:gap-8 text-[#69707D] font-light">
             <a href="#">
-              <li class="md:hover:text-[#FF7E1B]">
-                Collections
-              </li>
+              <li class="md:hover:text-[#FF7E1B]">Collections</li>
             </a>
             <a href="#">
               <li class="md:hover:text-[#FF7E1B]">Men</li>
@@ -74,13 +72,20 @@
           </ul>
         </div>
         <div class="flex gap-6">
-          <button id="cart-btn">
-            <img
-              class="h-6 self-center"
-              src="./images/icon-cart.svg"
-              alt="Cart"
-            />
-          </button>
+          
+          <div class="self-center h-6 relative">
+            <div id="cart-btn-quantity"  class="hidden cursor-pointer h-5 w-5 absolute border-2 border-[#FF7E1B] rounded-[50%] -top-2 -right-1 justify-center bg-[#FF7E1B]">
+              <span id="the-quantity" class="text-xs text-white font-semibold"></span>
+            </div>
+            <button id="cart-btn">
+              <img
+                class="h-6 self-center"
+                src="./images/icon-cart.svg"
+                alt="Cart"
+              />
+            </button>
+          </div>
+
           <img
             class="h-7 self-center md:w-10 md:h-10 md:border-2 md:rounded-full md:hover:border-[#FF7E1B] cursor-pointer"
             src="./images/image-avatar.png"
@@ -140,12 +145,14 @@
                 <span id="total" class="font-bold text-black">$</span>
               </p>
             </div>
-            <img
-              id="delete-item"
-              class="self-center"
-              src="./images/icon-delete.svg"
-              alt=""
-            />
+            <button>
+              <img
+                id="delete-item"
+                class="self-center cursor-pointer"
+                src="./images/icon-delete.svg"
+                alt=""
+              />
+            </button>
           </div>
           <button class="w-full font-bold bg-[#FF7E1B] mt-8 h-14 rounded-lg">
             Checkout
@@ -196,7 +203,11 @@
       <!-- md:block -->
       <!-- Pictures for large/medium screens -->
       <div class="hidden w-full md:flex md:flex-col md:gap-8">
-        <img class="rounded-lg cursor-pointer hover:opacity-50" src="./images/image-product-1.jpg" alt="" />
+        <img
+          class="rounded-lg cursor-pointer hover:opacity-50"
+          src="./images/image-product-1.jpg"
+          alt=""
+        />
         <div class="flex gap-8">
           <img
             class="w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50"
@@ -282,7 +293,6 @@
           <span class="font-bold text-[#1D2026] self-center">Add to cart</span>
         </button>
       </section>
-      
     </main>
 
     <script src="index.js"></script>

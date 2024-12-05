@@ -5,6 +5,8 @@ const minusBtnEl = document.getElementById("minus-btn");
 const plusBtnEl = document.getElementById("plus-btn");
 const quantityEl = document.getElementById("quantity");
 const cartBtnEl = document.getElementById("cart-btn");
+const cartBtnQuantityEl = document.getElementById("cart-btn-quantity");
+const theQuantityEl = document.getElementById("the-quantity");
 const cartContainerEl = document.getElementById("cart-container");
 const cartContainerEmptyEl = document.getElementById("cart-container-empty");
 const cartContainerFullEl = document.getElementById("cart-container-full");
@@ -90,6 +92,10 @@ addToCartEl.addEventListener('click', () => {
     itemsInCartEl.textContent = productQuantity;
     console.log(itemsInCartEl.textContent);
     totalBillEl.textContent = "$" + productQuantity * + 125 + ".00"
+    cartBtnQuantityEl.style.display = "flex"
+    theQuantityEl.textContent = productQuantity;
+    productQuantity = 0;
+    quantityEl.textContent = "0";
   }
 
 })
@@ -103,7 +109,7 @@ deleteItemEl.addEventListener('click', () => {
   totalBillEl.textContent = "";
   cartContainerFullEl.style.display = "none";
   cartContainerEmptyEl.style.display = "block";
-
+  cartBtnQuantityEl.style.display = "none";
 })
 
 /********** Function for the cart functionality **********/
