@@ -42,17 +42,36 @@
   0
   Add to cart -->
 
-    <header class="p-6 max-w-[1110px] m-auto">
-      <nav class="flex justify-between">
-        <div class="flex gap-4 items-center">
-          <button id="menu-btn">
+    <header class="p-6 max-w-[1110px] m-auto md:mt-[41px]">
+      <nav class="flex justify-between md:border-b-2 md:pb-8">
+        <div class="flex gap-4 items-center md:gap-14 cursor-pointer">
+          <button class="md:hidden" id="menu-btn">
             <img
               class="h-4 align-top"
               src="./images/icon-menu.svg"
               alt="Menu"
             />
           </button>
-          <img class="mb-[5px]" src="images/logo.svg" alt="" />
+          <a href=""><img class="mb-[5px]" src="images/logo.svg" alt="" /></a>
+          <ul class="hidden md:flex md:gap-8 text-[#69707D] font-light">
+            <a href="#">
+              <li class="md:hover:text-[#FF7E1B]">
+                Collections
+              </li>
+            </a>
+            <a href="#">
+              <li class="md:hover:text-[#FF7E1B]">Men</li>
+            </a>
+            <a href="#">
+              <li class="md:cursor-pointer md:hover:text-[#FF7E1B]">Women</li>
+            </a>
+            <a href="#">
+              <li class="md:cursor-pointer md:hover:text-[#FF7E1B]">About</li>
+            </a>
+            <a href="#">
+              <li class="md:cursor-pointer md:hover:text-[#FF7E1B]">Contact</li>
+            </a>
+          </ul>
         </div>
         <div class="flex gap-6">
           <button id="cart-btn">
@@ -63,7 +82,7 @@
             />
           </button>
           <img
-            class="h-7 self-center"
+            class="h-7 self-center md:w-10 md:h-10 md:border-2 md:rounded-full md:hover:border-[#FF7E1B] cursor-pointer"
             src="./images/image-avatar.png"
             alt="Avatar of the user"
           />
@@ -77,7 +96,7 @@
         <button id="close-btn">
           <img src="images/icon-close.svg" alt="" />
         </button>
-        <ul class="flex flex-col gap-4 font-bold">
+        <ul class="flex flex-col gap-4 font-bold md:hover:cursor-pointer">
           <li>Collections</li>
           <li>Men</li>
           <li>Women</li>
@@ -87,12 +106,13 @@
       </nav>
     </header>
 
-    <main class="relative">
+    <main
+      class="relative max-w-[1015px] md:flex md:gap-8 md:m-auto md:mt-[60px]"
+    >
       <!-- Cart -->
-        <!-- Do I really need h-[300px] for the cart container since I have the min-h-56 -->
       <div
         id="cart-container"
-        class="hidden absolute m-auto w-[350px] bg-white rounded-lg z-999 top-4 left-3 shadow-lg md:top-0 md:left-0 md:right-0" 
+        class="hidden absolute m-auto w-[350px] bg-white rounded-lg z-999 top-4 left-3 shadow-lg md:absolute md:-right-[1000px] md:-top-20"
       >
         <div
           class="pl-[24px] pt-[24px] pb-[31px] border-b-[1px] border-b-[#979797]"
@@ -106,44 +126,38 @@
         </div>
         <div id="cart-container-full" class="p-4 hidden">
           <div class="flex gap-4">
-            <img class="h-12 w-12 rounded" src="./images/image-product-1-thumbnail.jpg" alt="">
+            <img
+              class="h-12 w-12 rounded"
+              src="./images/image-product-1-thumbnail.jpg"
+              alt=""
+            />
             <div>
-              <p class="text-[#979797] font-light">Fall Limited Edition Sneakers</p>
-              <p class="text-[#979797] font-light">$125.00 x <span id="items-in-cart">1</span> <span id="total" class="font-bold text-black">$</span></p>
+              <p class="text-[#979797] font-light">
+                Fall Limited Edition Sneakers
+              </p>
+              <p class="text-[#979797] font-light">
+                $125.00 x <span id="items-in-cart">1</span>
+                <span id="total" class="font-bold text-black">$</span>
+              </p>
             </div>
-            <img id="delete-item" class="self-center" src="./images/icon-delete.svg" alt="">
+            <img
+              id="delete-item"
+              class="self-center"
+              src="./images/icon-delete.svg"
+              alt=""
+            />
           </div>
-          <button class="w-full font-bold bg-[#FF7E1B] mt-8 h-14 rounded-lg">Checkout</button>
+          <button class="w-full font-bold bg-[#FF7E1B] mt-8 h-14 rounded-lg">
+            Checkout
+          </button>
         </div>
-        
       </div>
-
-      <!-- Cart with items -->
-
-      <!-- <div
-        id="cart-container-full"
-        class="absolute w-[350px] bg-white rounded-lg z-999 top-4 left-3 shadow-lg hidden" 
-      >
-        <div class="mb-5">
-          <p class="p-6 font-bold border-b-[1px] border-b-[#979797]">Cart</p>
-        </div>
-        <div class="p-4">
-          <div class="flex gap-4">
-            <img class="h-12 w-12 rounded" src="./images/image-product-1-thumbnail.jpg" alt="">
-            <div>
-              <p class="text-[#979797] font-light">Fall Limited Edition Sneakers</p>
-              <p class="text-[#979797] font-light">$125.00 x <span id="items-in-cart">1</span> <span id="total" class="font-bold text-black"></span></p>
-            </div>
-            <img id="delete-item" class="self-center" src="./images/icon-delete.svg" alt="">
-          </div>
-          <button class="w-full font-bold bg-[#FF7E1B] mt-8 h-14 rounded-lg">Checkout</button>
-        </div>
-        
-      </div> -->
 
       <!-- Image slider. Need some help with this and if there is a better way to go about it? -->
 
-      <div class="slider relative w-full max-w-4xl m-auto overflow-hidden">
+      <div
+        class="md:hidden slider relative w-full max-w-4xl m-auto overflow-hidden"
+      >
         <!-- Slider container -->
         <div id="slides" class="flex transition-transform duration-500">
           <img
@@ -179,11 +193,43 @@
         ></button>
       </div>
 
-      <section class="p-6">
-        <p class="text-[11px] tracking-[0.2rem] font-bold text-[#69707D] mb-5">
+      <!-- md:block -->
+      <!-- Pictures for large/medium screens -->
+      <div class="hidden w-full md:flex md:flex-col md:gap-8">
+        <img class="rounded-lg cursor-pointer hover:opacity-50" src="./images/image-product-1.jpg" alt="" />
+        <div class="flex gap-8">
+          <img
+            class="w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50"
+            src="./images/image-product-1-thumbnail.jpg"
+            alt=""
+          />
+          <img
+            class="w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50"
+            src="./images/image-product-2-thumbnail.jpg"
+            alt=""
+          />
+          <img
+            class="w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50"
+            src="./images/image-product-3-thumbnail.jpg"
+            alt=""
+          />
+          <img
+            class="w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50"
+            src="./images/image-product-4-thumbnail.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <section class="p-6 md:self-center">
+        <p
+          class="text-[11px] tracking-[0.2rem] font-bold text-[#69707D] mb-5 md:text-[13px]"
+        >
           SNEAKER COMPANY
         </p>
-        <h2 class="text-3xl font-bold mb-5">Fall Limited Edition Sneakers</h2>
+        <h2 class="text-3xl font-bold mb-5 md:text-4xl md:mb-8">
+          Fall Limited Edition Sneakers
+        </h2>
         <p class="text-[#69707D] text-[15px] font-light leading-6 mb-5">
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole, they’ll withstand everything
@@ -191,7 +237,7 @@
         </p>
 
         <!-- Pricing -->
-        <div class="flex justify-between mb-5">
+        <div class="flex justify-between mb-5 md:flex-col">
           <div class="flex gap-4">
             <p class="text-[#1D2026] text-[28px] font-bold">$125.00</p>
             <span
@@ -200,13 +246,14 @@
             >
           </div>
           <p
-            class="text-[#69707D] font-semibold self-center text-[16px] line-through"
+            class="text-[#69707D] font-semibold self-center text-[16px] line-through md:self-start md:mt-3"
           >
             $250.00
           </p>
         </div>
 
         <!-- - 0 + -->
+
         <div
           class="flex justify-between pl-[24px] pr-[24px] pt-[26px] pb-[26px] rounded-lg bg-[#F6F8FD] mb-5"
         >
@@ -218,11 +265,10 @@
             <img class="self-center" src="./images/icon-plus.svg" alt="" />
           </button>
         </div>
-
         <!-- Add to Cart Button -->
         <button
           id="add-to-cart"
-          class="w-full bg-[#FF7E1B] flex justify-center items-center rounded-md pt-[19px] pb-[19px] gap-4"
+          class="w-full bg-[#FF7E1B] flex justify-center items-center rounded-md pt-[19px] pb-[19px] gap-4 md:hover:bg-[#FFAB6A]"
         >
           <!-- How do I change the color of the cart? -->
           <!-- <img class="h-4 self-center" src="./images/icon-cart.svg" alt=""> -->
@@ -236,6 +282,7 @@
           <span class="font-bold text-[#1D2026] self-center">Add to cart</span>
         </button>
       </section>
+      
     </main>
 
     <script src="index.js"></script>
