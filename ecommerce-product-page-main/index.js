@@ -10,12 +10,13 @@ const theQuantityEl = document.getElementById("the-quantity");
 const cartContainerEl = document.getElementById("cart-container");
 const cartContainerEmptyEl = document.getElementById("cart-container-empty");
 const cartContainerFullEl = document.getElementById("cart-container-full");
-console.log(cartContainerEmptyEl)
-console.log(cartContainerFullEl)
 const addToCartEl = document.getElementById('add-to-cart');
 const itemsInCartEl = document.getElementById('items-in-cart');
 const totalBillEl = document.getElementById('total');
 const deleteItemEl = document.getElementById('delete-item');
+const secondDisplayEl = document.querySelectorAll('.second-display');
+const mainDisplayContainerEl = document.getElementById('main-display-container');
+console.log(mainDisplayContainerEl);
 let productQuantity = 0;
 let currentIndex = 0;
 
@@ -110,6 +111,16 @@ deleteItemEl.addEventListener('click', () => {
   cartContainerFullEl.style.display = "none";
   cartContainerEmptyEl.style.display = "block";
   cartBtnQuantityEl.style.display = "none";
+})
+
+/********** Changing the main display when an img is clicked **********/
+
+secondDisplayEl.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    mainDisplayContainerEl.style.backgroundImage = `url('./images/image-product-${index + 1}.jpg')`;
+    mainDisplayContainerEl.style.backgroundSize = "cover";
+    mainDisplayContainerEl.style.backgroundPosition = "center";
+  })
 })
 
 /********** Function for the cart functionality **********/
