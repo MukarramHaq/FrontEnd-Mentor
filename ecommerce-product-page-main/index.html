@@ -122,7 +122,7 @@
       <!-- Cart -->
       <div
         id="cart-container"
-        class="hidden absolute m-auto w-[350px] bg-white rounded-lg z-999 top-4 left-3 shadow-lg md:absolute md:-right-[1000px] md:-top-20"
+        class="hidden absolute m-auto right-0 min-w-[350px] max-w-[350px] bg-white rounded-lg z-999 top-4 left-3 shadow-lg md:absolute md:-right-[1000px] md:-top-20"
       >
         <div
           class="pl-[24px] pt-[24px] pb-[31px] border-b-[1px] border-b-[#979797]"
@@ -207,10 +207,10 @@
 
       <!-- md:block -->
       <!-- Pictures for large/medium screens -->
-      <div class="hidden w-full md:flex md:flex-col md:gap-8">
+      <div id="pictures" class="hidden w-full md:flex md:flex-col md:gap-8">
         <div
           id="main-display-container"
-          class="h-full bg-main-display bg-no-repeat bg-center bg-cover rounded-lg"
+          class="h-full bg-main-display bg-no-repeat bg-center bg-cover rounded-lg cursor-pointer"
         ></div>
         <div class="flex gap-8">
           <img
@@ -234,6 +234,77 @@
             alt=""
           />
         </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div
+        id="lightbox"
+        class="hidden fixed z-1000 top-0 left-0 h-full w-full bg-black/[.8] justify-center items-center flex-col gap-8"
+      >
+        <div>
+          <div class="flex flex-col gap-8">
+            <!-- <img class="h-5 w-5 self-end" src="images/icon-close.svg" alt="" /> -->
+            <svg id="lightbox-close" class="self-end cursor-pointer" width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#FFFF" fill-rule="evenodd"/></svg>
+            <div class="flex flex-col gap-8">
+              <div
+                id="main-display-container-lightbox"
+                class="h-[550px] w-[550px] bg-main-display bg-no-repeat bg-center bg-cover rounded-lg cursor-pointer"
+              ></div>
+              <div class="hidden md:flex flex-row w-[520px] justify-evenly">
+                <img
+                  class="second-display-lightbox w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
+                  src="./images/image-product-1-thumbnail.jpg"
+                  alt=""
+                />
+                <img
+                  
+                  class="second-display-lightbox w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
+                  src="./images/image-product-2-thumbnail.jpg"
+                  alt=""
+                />
+                <img
+                  
+                  class="second-display-lightbox w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
+                  src="./images/image-product-3-thumbnail.jpg"
+                  alt=""
+                />
+                <img
+                  
+                  class="second-display-lightbox w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
+                  src="./images/image-product-4-thumbnail.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div
+          id="main-display-container-lightbox"
+          class="h-[550px] w-[550px] bg-main-display bg-no-repeat bg-center bg-cover rounded-lg cursor-pointer"
+        ></div>
+        <div class="hidden md:flex flex-row w-[520px] justify-evenly">
+          <img
+            class="second-display w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
+            src="./images/image-product-1-thumbnail.jpg"
+            alt=""
+          />
+          <img
+            class="second-display w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
+            src="./images/image-product-2-thumbnail.jpg"
+            alt=""
+          />
+          <img
+            class="second-display w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
+            src="./images/image-product-3-thumbnail.jpg"
+            alt=""
+          />
+          <img
+            class="second-display w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
+            src="./images/image-product-4-thumbnail.jpg"
+            alt=""
+          />
+        </div> -->
       </div>
 
       <section class="p-6 md:self-center">

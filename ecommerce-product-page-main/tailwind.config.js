@@ -9,6 +9,7 @@ module.exports = {
       },
       zIndex: {
         '999': '999',
+        '1000': '1000',
       },
       backgroundImage: {
         'left-pointer': "url('./images/icon-previous.svg')",

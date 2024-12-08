@@ -16,7 +16,15 @@ const totalBillEl = document.getElementById('total');
 const deleteItemEl = document.getElementById('delete-item');
 const secondDisplayEl = document.querySelectorAll('.second-display');
 const mainDisplayContainerEl = document.getElementById('main-display-container');
-console.log(mainDisplayContainerEl);
+const picturesEl = document.getElementById('pictures');
+const closeLightBoxEl = document.getElementById('lightbox-close');
+const lightboxEl = document.getElementById('lightbox');
+
+// Lightbox
+const mainDisplayLightboxEl = document.getElementById('main-display-container-lightbox');
+const secondDisplayLightboxEl = document.querySelectorAll('.second-display-lightbox')
+console.log(secondDisplayLightboxEl)
+
 let productQuantity = 0;
 let currentIndex = 0;
 
@@ -120,6 +128,29 @@ secondDisplayEl.forEach((img, index) => {
     mainDisplayContainerEl.style.backgroundImage = `url('./images/image-product-${index + 1}.jpg')`;
     mainDisplayContainerEl.style.backgroundSize = "cover";
     mainDisplayContainerEl.style.backgroundPosition = "center";
+  })
+})
+
+/********** Lightbox **********/
+
+mainDisplayContainerEl.addEventListener('click', () => {
+  lightboxEl.style.display = "flex";
+})
+
+closeLightBoxEl.addEventListener('click', () => {
+  lightboxEl.style.display = "none"
+})
+
+lightboxEl.addEventListener('click', e => {
+  if(e.target !== e.currentTarget) return
+  lightboxEl.style.display = "none";
+})
+
+secondDisplayLightboxEl.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    mainDisplayLightboxEl.style.backgroundImage = `url('./images/image-product-${index + 1}.jpg')`;
+    mainDisplayLightboxEl.style.backgroundSize = "cover";
+    mainDisplayLightboxEl.style.backgroundPosition = "center";
   })
 })
 

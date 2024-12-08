@@ -34,3 +34,9 @@ addToCartEl.addEventListener("click", () => {
     isAddedToCart = false; // Reset if quantity is 0
   }
 });
+
+/********** Steps to make a lightbox design **********/
+1. When clicked on the mainDisplayContainerEl it shows up the lightbox.
+2. Our images are already collected in the secondDisplayEl
+3. Add an addEventListener to the mainDisplayContainerEl.
+4. add the active class like lightbox.classList.add('active');
