@@ -52,21 +52,21 @@
               alt="Menu"
             />
           </button>
-          <a href=""><img class="mb-[5px]" src="images/logo.svg" alt="" /></a>
+          <a href="" aria-label="Company Logo"><img class="mb-[5px]" src="images/logo.svg" alt="" /></a>
           <ul class="hidden md:flex md:gap-8 text-[#69707D] font-light">
-            <a href="#">
+            <a href="#" aria-label="Visit our Collections">
               <li class="md:hover:text-[#FF7E1B]">Collections</li>
             </a>
-            <a href="#">
+            <a href="#" aria-label="Visit Men's Collection">
               <li class="md:hover:text-[#FF7E1B]">Men</li>
             </a>
-            <a href="#">
+            <a href="#" aria-label="Visit Women's Collection">
               <li class="md:cursor-pointer md:hover:text-[#FF7E1B]">Women</li>
             </a>
-            <a href="#">
+            <a href="#" aria-label="More about us">
               <li class="md:cursor-pointer md:hover:text-[#FF7E1B]">About</li>
             </a>
-            <a href="#">
+            <a href="#" aria-label="Contact us using this link">
               <li class="md:cursor-pointer md:hover:text-[#FF7E1B]">Contact</li>
             </a>
           </ul>
@@ -91,11 +91,13 @@
             </button>
           </div>
 
-          <img
-            class="h-7 self-center md:w-10 md:h-10 md:border-2 md:rounded-full md:hover:border-[#FF7E1B] cursor-pointer"
-            src="./images/image-avatar.png"
-            alt="Avatar of the user"
-          />
+          <a href="#" aria-label="Visit your account">
+            <img
+              class="h-7 self-center md:w-10 md:h-10 md:border-2 md:rounded-full md:hover:border-[#FF7E1B] cursor-pointer"
+              src="./images/image-avatar.png"
+              alt="Avatar of the user"
+            />
+          </a>
         </div>
       </nav>
 
@@ -150,7 +152,7 @@
                 <span id="total" class="font-bold text-black">$</span>
               </p>
             </div>
-            <button>
+            <button aria-label="Increase product quantity by pressing this button">
               <img
                 id="delete-item"
                 class="self-center cursor-pointer"
@@ -278,33 +280,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <div
-          id="main-display-container-lightbox"
-          class="h-[550px] w-[550px] bg-main-display bg-no-repeat bg-center bg-cover rounded-lg cursor-pointer"
-        ></div>
-        <div class="hidden md:flex flex-row w-[520px] justify-evenly">
-          <img
-            class="second-display w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
-            src="./images/image-product-1-thumbnail.jpg"
-            alt=""
-          />
-          <img
-            class="second-display w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
-            src="./images/image-product-2-thumbnail.jpg"
-            alt=""
-          />
-          <img
-            class="second-display w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
-            src="./images/image-product-3-thumbnail.jpg"
-            alt=""
-          />
-          <img
-            class="second-display w-[88px] h-[88px] rounded-lg cursor-pointer hover:opacity-50 hover:border-2 hover:border-[#FF7E1B]"
-            src="./images/image-product-4-thumbnail.jpg"
-            alt=""
-          />
-        </div> -->
       </div>
 
       <section class="p-6 md:self-center">
@@ -327,6 +302,7 @@
           <div class="flex gap-4">
             <p class="text-[#1D2026] text-[28px] font-bold">$125.00</p>
             <span
+              aria-label="50% off"
               class="pl-[10px] pr-[10px] pt-[6px] pb-[6px] flex-grow-0 bg-black text-white font-semibold self-center rounded-md"
               >50%</span
             >
@@ -343,11 +319,11 @@
         <div
           class="flex justify-between pl-[24px] pr-[24px] pt-[26px] pb-[26px] rounded-lg bg-[#F6F8FD] mb-5"
         >
-          <button id="minus-btn" class="self-center">
+          <button id="minus-btn" class="self-center" aria-label="Decrease the product quantity to buy">
             <img src="./images/icon-minus.svg" alt="" />
           </button>
           <span id="quantity" class="text-[#1D2026] font-semibold">0</span>
-          <button id="plus-btn">
+          <button id="plus-btn" aria-label="Increase the product quantity to buy">
             <img class="self-center" src="./images/icon-plus.svg" alt="" />
           </button>
         </div>
